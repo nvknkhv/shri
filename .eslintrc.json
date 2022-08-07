@@ -1,0 +1,26 @@
+{
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "extends": [
+    "airbnb",
+    "airbnb/hooks",
+    "plugin:react/recommended",
+    "prettier/react",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "import/no-unresolved": 0,
+    "react/jsx-filename-extension": 0
+  }
+}

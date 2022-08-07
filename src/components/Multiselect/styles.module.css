@@ -1,0 +1,49 @@
+.multiselect {
+    width: 100%;
+}
+
+.multiselect__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    font-family: 'YS Text Regular';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    border-radius: 3px;
+    background: #E3E3E3;
+    color: #333333;
+}
+
+.multiselect__header_expanded {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.options {
+    display: block;
+    border: 1px #dadada solid;
+    padding: 10px;
+    background: #D8D7D7;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    overflow: hidden;
+}
+
+.options .options__content {
+    height: 100px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.options .options__content .options__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    height: 24px;
+    margin-right: 17px;
+}

@@ -1,0 +1,15 @@
+.input {
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'YS Text Regular';
+    border-radius: 4px;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 15px;
+    box-shadow: 0 1px 2px 0 #0000001F;
+    border: none;
+    background: #FFFFFF;
+    outline: none;
+    color: #565656;
+}

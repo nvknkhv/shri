@@ -1,0 +1,29 @@
+.comment {
+    background: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.comment__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'YS Text Regular';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 15px;
+    color: #333333;
+}
+
+.comment__header svg {
+    color: #929292;
+}
+
+.comment__content {
+    font-family: 'YS Text Regular';
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 19px;
+    color: #565656;
+}
