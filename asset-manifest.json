@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/shri/static/css/main.53a00163.css",
+    "main.js": "/shri/static/js/main.b9c78d2b.js",
+    "index.html": "/shri/index.html",
+    "main.53a00163.css.map": "/shri/static/css/main.53a00163.css.map",
+    "main.b9c78d2b.js.map": "/shri/static/js/main.b9c78d2b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.53a00163.css",
+    "static/js/main.b9c78d2b.js"
+  ]
+}
