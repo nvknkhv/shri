@@ -3,7 +3,11 @@ import React from 'react';
 const useClickOutside = (ref, callback) => {
   const handleClick = (event) => {
     if (ref.current && !ref.current.contains(event.target)) {
-      callback();
+      //хак на закрытие тега, пока не знаю как сделать лучше
+      if (!['rect', 'svg'].includes(event.target.tagName)) {
+        //console.log('outside');
+        //callback();
+      }
     }
   };
   React.useEffect(() => {

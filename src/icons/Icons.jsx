@@ -4,7 +4,7 @@ export const Plus = () => (
   <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <path
       d="M6.00001 10.6667V6.00001M6.00001 6.00001V1.33334M6.00001 6.00001H10.6667M6.00001 6.00001H1.33334"
-      stroke="#333333"
+      stroke="currentColor"
       strokeWidth="1.4"
       strokeLinecap="round"
     />
@@ -60,6 +60,25 @@ export const Check = () => (
     <path
       d="M3.33333 8.19166L0 4.85833L1.175 3.68333L3.33333 5.83333L8.825 0.34166L10 1.52499L3.33333 8.19166Z"
       fill="#292929"
+    />
+  </svg>
+);
+
+export const Return = () => (
+  <svg width="35" height="35" viewBox="0 0 35 35" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M7.65625 24.0625L3.28125 19.6875L7.65625 15.3125"
+      stroke="currentColor"
+      strokeWidth="2.1875"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M4.375 19.6875H24.4727C28.4895 19.6875 31.7188 16.3153 31.7188 12.3047V10.9375"
+      strokeWidth="2.1875"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      stroke="currentColor"
     />
   </svg>
 );

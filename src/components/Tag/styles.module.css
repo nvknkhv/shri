@@ -36,3 +36,9 @@
     background-color: #FFF4C7;
 }
 
+.tag_closed {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+

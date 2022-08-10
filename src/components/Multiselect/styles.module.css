@@ -2,6 +2,20 @@
     width: 100%;
 }
 
+.multiselect__tags {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.multiselect__tags_5 {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.multiselect__tags_6 {
+    grid-template-columns: repeat(6, 1fr);
+}
+
 .multiselect__header {
     display: flex;
     align-items: center;

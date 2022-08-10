@@ -1,0 +1,38 @@
+.modal__title {
+    font-family: 'YS Text Regular';
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    padding-left: 91px;
+    padding-right: 31px;
+}
+
+.modal__close {
+    height: 64px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal__inner {
+    padding: 14px 84px 64px;
+}
+
+.modal__content {
+    padding: 14px;
+    border: 1px solid #CACACA;
+    border-radius: 7px;
+}
+
+.modal__content input {
+    margin-bottom: 8px;
+}
+
+.modal__content textarea {
+    margin-bottom: 14px;
+}
+
+.modal__content button {
+    margin-top: 14px;
+}

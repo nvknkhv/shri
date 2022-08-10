@@ -1,0 +1,36 @@
+.menu {
+    cursor: pointer;
+}
+
+.popup {
+    position: absolute;
+    //height: 62px;
+    width: 133px;
+    border-radius: 6px;
+    box-shadow: 2px 3px 5px 0px #0000001F;
+    z-index: 1;
+    background: #FFFFFF;
+    padding: 12px 13px;
+    box-sizing: border-box;
+}
+
+.popup__options span {
+    display: block;
+    margin-bottom: 8px;
+    font-family: 'YS Text Regular';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 15px;
+    color: #333333;
+    cursor: pointer;
+}
+.popup__options span:not(:last-child) {
+    margin-bottom: 8px;
+}
+
+.popup__close {
+    position: absolute;
+    top: 12px;
+    right: 13px;
+    cursor: pointer;
+}

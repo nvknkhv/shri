@@ -1,0 +1,17 @@
+.modal__inner {
+    padding: 44px 66px;
+}
+
+.modal__title {
+    font-family: 'YS Text Regular';
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+}
+
+.modal__buttons {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+}
+

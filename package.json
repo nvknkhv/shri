@@ -1,6 +1,8 @@
 {
   "name": "shri",
   "version": "0.1.0",
+  "author": "Natalya Konokhova",
+  "homepage": "https://nvknkhv.github.io/shri",
   "private": true,
   "dependencies": {
     "@babel/eslint-parser": "^7.18.9",
@@ -13,9 +15,11 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.30.1",
+    "gh-pages": "^4.0.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
@@ -24,7 +28,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "eslint:fix": "eslint --fix src/**/*.{js,jsx}"
+    "eslint:fix": "eslint --fix src/**/*.{js,jsx}",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
