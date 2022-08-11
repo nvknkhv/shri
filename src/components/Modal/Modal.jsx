@@ -1,8 +1,8 @@
 import React from 'react';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
 
 import styles from './styles.module.css';
-import PropTypes from 'prop-types';
 
 export const Modal = ({ children, size = 'sm' }) => {
   return (

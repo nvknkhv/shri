@@ -1,21 +1,17 @@
 import React, { useState } from 'react';
-
+import { Link, Outlet } from 'react-router-dom';
 import classnames from 'classnames';
 
 import styles from './styles.module.css';
-import Input from '../../components/Input/Input';
-import MultiSelect from '../../components/Multiselect';
+import Input from '../../components/Input';
+import MultiSelect from '../../components/MultiSelect';
 import Button from '../../components/Button';
 import MenuButton from '../../components/MenuButton';
 import Comment from '../../components/Comment';
 import { Plus, Return } from '../../icons';
 import { useGlobalModal } from '../../components/globalModal';
-import CommentModal from '../../modals/CommentModal';
 import DeleteModal from '../../modals/DeleteModal/DeleteModal';
 import route from './route';
-import { Outlet } from 'react-router-dom';
-import CommentPage from "../CommentPage/CommentPage";
-import { Link } from 'react-router-dom';
 
 const TaskPage = () => {
   const { setModal } = useGlobalModal();
@@ -56,13 +52,14 @@ const TaskPage = () => {
                 content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
               />
             </div>
-            <Link to={CommentPage.path}>
+            <Link to="comment/create">
               <Button
                 accent="transparent"
                 LeftIcon={Plus}
                 color="grey"
                 size="flat"
                 isDisabled={!isEditing}
+                onClick={() => {}}
               >
                 Добавить комментарий
               </Button>

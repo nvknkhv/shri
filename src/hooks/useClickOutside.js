@@ -5,8 +5,7 @@ const useClickOutside = (ref, callback) => {
     if (ref.current && !ref.current.contains(event.target)) {
       //хак на закрытие тега, пока не знаю как сделать лучше
       if (!['rect', 'svg'].includes(event.target.tagName)) {
-        //console.log('outside');
-        //callback();
+        callback();
       }
     }
   };

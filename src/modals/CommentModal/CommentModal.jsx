@@ -1,18 +1,15 @@
 import React from 'react';
 import classnames from 'classnames';
+import { useNavigate } from 'react-router-dom';
 
 import styles from './styles.module.css';
-import { useGlobalModal } from '../../components/globalModal';
 import { Close } from '../../icons';
-import Input from '../../components/Input/Input';
-import MultiSelect from '../../components/Multiselect';
+import Input from '../../components/Input';
 import Button from '../../components/Button';
 import Modal from '../../components/Modal';
-import { useNavigate } from 'react-router-dom';
 import TaskPage from '../../pages/TaskPage';
 
 export const CommentModal = () => {
-  const { resetModal } = useGlobalModal();
   const navigate = useNavigate();
   return (
     <Modal>
@@ -20,7 +17,6 @@ export const CommentModal = () => {
         <div
           className={classnames(styles.modal__close)}
           onClick={() => {
-            resetModal();
             navigate(TaskPage.path);
           }}
         >

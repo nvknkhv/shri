@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 import styles from './styles.module.css';
 
-export const Checkbox = ({ defaultChecked = false, children, onClick}) => {
+export const Checkbox = ({ defaultChecked = false, children, onClick }) => {
   const [isChecked, setChecked] = useState(defaultChecked);
   return (
     <label className={classnames(styles.checkbox)}>

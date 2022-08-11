@@ -6,20 +6,28 @@ import styles from './styles.module.css';
 import Tag from '../Tag';
 import { CommentAttention, CommentText } from '../../icons';
 import MenuButton from '../MenuButton';
-import TaskModal from '../../modals/TaskModal';
-import { useGlobalModal } from '../globalModal';
-import CreateTaskPage from '../../pages/CreateTaskPage/CreateTaskPage';
-import {basePath} from '../../pages/TaskPage/route';
+import { basePath } from '../../pages/TaskPage/route';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { activeTicketSelector, setActiveTicket } from '../../reducers/slice';
 
-export const TaskCard = ({ tags, title }) => {
-  const { setModal } = useGlobalModal();
+export const TaskCard = ({ tags, title, description, comments, id, status }) => {
+  const dispatch = useDispatch();
+  const activeTicket = useSelector(activeTicketSelector);
+
   return (
     <article className={classnames(styles.card)}>
       <div className={classnames(styles.card__raw)}>
-        <span className={classnames(styles.card__title)}>{title}</span>
+        <span
+          className={classnames(styles.card__title)}
+          onClick={() => {
+            dispatch(setActiveTicket({ id, status }));
+          }}
+        >
+          {title}
+        </span>
         <div className={classnames(styles.card__actions, styles.card__actions_top)}>
-          <Link to={`${basePath}/1`}>
+          <Link to={`${basePath}/${id}`}>
             <MenuButton />
           </Link>
         </div>
@@ -31,8 +39,8 @@ export const TaskCard = ({ tags, title }) => {
           ))}
         </div>
         <div className={classnames(styles.card__actions, styles.card__actions_bottom)}>
-          <CommentAttention />
-          <CommentText />
+          {description && <CommentAttention />}
+          {comments.length > 0 && <CommentText />}
         </div>
       </div>
     </article>
@@ -40,8 +48,12 @@ export const TaskCard = ({ tags, title }) => {
 };
 
 TaskCard.propTypes = {
-  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+  tags: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  comments: PropTypes.arrayOf(PropTypes.shape({ author: PropTypes.string, text: PropTypes.string })),
+  id: PropTypes.string.isRequired,
+  status: PropTypes.string.isRequired,
 };
 
 export default TaskCard;

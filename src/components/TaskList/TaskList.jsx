@@ -6,21 +6,28 @@ import styles from './styles.module.css';
 import TaskCard from '../TaskCard';
 import Button from '../Button';
 import { Plus } from '../../icons';
-import { useGlobalModal } from '../globalModal';
-import TaskModal from '../../modals/TaskModal';
 import { Link } from 'react-router-dom';
-import CreateTaskPage from "../../pages/CreateTaskPage";
 
-export const TaskList = ({ title, items }) => {
-  const { setModal } = useGlobalModal();
+export const TaskList = ({ title, cards, status }) => {
   return (
     <div className={classnames(styles.taskList)}>
       <span className={classnames(styles.taskList__title)}>{title}</span>
       <div className={classnames(styles.taskList__content)}>
-        <TaskCard title={items[0].title} tags={items[0].tags} />
+        {cards.length > 0 &&
+          cards.map((card) => (
+            <TaskCard
+              key={card.id}
+              id={card.id}
+              title={card.title}
+              tags={card.tags}
+              description={card.description}
+              comments={card.comments}
+              status={status}
+            />
+          ))}
         {title !== 'Done' && (
-          <Link to={CreateTaskPage.path}>
-            <Button LeftIcon={Plus} isFullWidth accent="active">
+          <Link to="create">
+            <Button LeftIcon={Plus} isFullWidth accent="active" onClick={() => {}}>
               Добавить
             </Button>
           </Link>
@@ -32,7 +39,8 @@ export const TaskList = ({ title, items }) => {
 
 TaskList.propTypes = {
   title: PropTypes.string.isRequired,
-  items: PropTypes.arrayOf(
+  status: PropTypes.string.isRequired,
+  cards: PropTypes.arrayOf(
     PropTypes.shape({ title: PropTypes.string.isRequired, tags: PropTypes.arrayOf(PropTypes.string) }),
   ),
 };

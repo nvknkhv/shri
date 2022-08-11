@@ -12,7 +12,7 @@ export const Button = ({
   size = 'md',
   withBorder = false,
   onClick,
-  color,
+  color = 'black',
 }) => {
   return (
     <button
@@ -40,6 +40,7 @@ Button.propTypes = {
   size: PropTypes.string,
   isFullWidth: PropTypes.bool,
   withBorder: PropTypes.bool,
+  color: PropTypes.string,
 };
 
 export default Button;

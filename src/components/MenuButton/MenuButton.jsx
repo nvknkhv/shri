@@ -6,7 +6,7 @@ import styles from './styles.module.css';
 import { Close, Dots } from '../../icons';
 import { useGlobalModal } from '../globalModal';
 
-export const MenuButton = ({ actions }) => {
+export const MenuButton = ({ actions = [] }) => {
   const { setModal, resetModal } = useGlobalModal();
   const ref = useRef();
   const [target, setTarget] = useState();
@@ -23,33 +23,35 @@ export const MenuButton = ({ actions }) => {
     <div
       className={classnames(styles.menu)}
       onClick={(event) => {
-        setTarget(event.target);
-        setModal(
-          <div ref={ref} className={classnames(styles.popup)}>
-            <div
-              className={classnames(styles.popup__close)}
-              onClick={() => {
-                setTarget(null);
-                resetModal();
-              }}
-            >
-              <Close />
-            </div>
-            <div className={classnames(styles.popup__options)}>
-              {actions.map(({ name, callback }) => (
-                <span
-                  key={name}
-                  onClick={() => {
-                    setTarget(null);
-                    callback();
-                  }}
-                >
-                  {name}
-                </span>
-              ))}
-            </div>
-          </div>,
-        );
+        if (actions.length > 0) {
+          setTarget(event.target);
+          setModal(
+            <div ref={ref} className={classnames(styles.popup)}>
+              <div
+                className={classnames(styles.popup__close)}
+                onClick={() => {
+                  setTarget(null);
+                  resetModal();
+                }}
+              >
+                <Close />
+              </div>
+              <div className={classnames(styles.popup__options)}>
+                {actions.map(({ name, callback }) => (
+                  <span
+                    key={name}
+                    onClick={() => {
+                      setTarget(null);
+                      callback();
+                    }}
+                  >
+                    {name}
+                  </span>
+                ))}
+              </div>
+            </div>,
+          );
+        }
       }}
     >
       <Dots />
@@ -58,7 +60,7 @@ export const MenuButton = ({ actions }) => {
 };
 
 MenuButton.propTypes = {
-  actions: PropTypes.arrayOf(PropTypes.shape({ name: PropTypes.string, callback: PropTypes.func })).isRequired,
+  actions: PropTypes.arrayOf(PropTypes.shape({ name: PropTypes.string, callback: PropTypes.func })),
 };
 
 export default MenuButton;
